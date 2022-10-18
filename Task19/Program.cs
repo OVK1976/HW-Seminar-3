@@ -9,19 +9,14 @@
 23432 -> да*/
 
 Console.Write("Введите пятизначное число: ");
-int N = int.Parse(Console.ReadLine());
-int[] Num = new int[5];
-if ( N<1000 || N>99999)
+string N = Console.ReadLine();
+if (int.Parse(N) < 1000 || int.Parse(N) > 99999)
 {
-    Console.WriteLine("Число не является пятизначным. Введите число снова");   
+    Console.WriteLine("Число не является пятизначным. Введите число снова");
 }
 else
 {
-    for (int i = 4; i == 0; i--)
-    {
-        Num[i] = N % 10;
-    }
-    if (Num[0] == Num[4] && Num[1] == Num[3])
+    if (N[0] == N[4] && N[1] == N[3])
     {
         Console.WriteLine($" Число {N} является полиндромом");
     }
@@ -30,5 +25,3 @@ else
         Console.WriteLine(" Число НЕ является полиндромом");
     }
 }
-
-
